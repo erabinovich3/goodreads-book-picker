@@ -1,4 +1,4 @@
-const filterBooks = (books) => {
+export const filterBooks = (books) => {
   const filteredBooks = books
     // filter out already read/currently reading books
     .filter(
@@ -22,7 +22,7 @@ const filterBooks = (books) => {
   return filteredBooks;
 };
 
-const isValidGRArray = (arr) => {
+export const isValidGRArray = (arr) => {
   return (
     arr[0].hasOwnProperty("book-id") &&
     arr[0].hasOwnProperty("title") &&
@@ -58,12 +58,6 @@ const isValidGRArray = (arr) => {
   );
 };
 
-const getShelves = (books) => {
+export const getShelves = (books) => {
   return [...new Set(books.map((book) => book.shelf))];
-};
-
-module.exports = {
-  isValidGRArray,
-  filterBooks,
-  getShelves,
 };
