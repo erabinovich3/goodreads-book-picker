@@ -1,0 +1,98 @@
+/* General */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bs-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bs-gray-400);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-gray-500);
+}
+
+/* Custom Modal */
+.modal-bg {
+  z-index: 98;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.custom-modal {
+  z-index: 99;
+  top: 20%;
+}
+
+/* Upload Page */
+.intro-page {
+  background-color: var(--bs-primary);
+}
+
+.upload-block {
+  background-color: white;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-upload {
+  margin-top: 2.5rem;
+}
+
+/* Book Pick Page */
+.sidebar {
+  background-color: var(--bs-primary);
+}
+
+.shelves {
+  overflow-y: auto !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-success) !important;
+}
+
+.chosen-book {
+  top: 40%;
+}
+
+.shelf {
+  background-color: var(--bs-secondary);
+  color: black;
+  border-radius: 5px;
+  padding: 0 0.5rem 0.2rem 0.5rem;
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .sidebar {
+    justify-content: flex-start !important;
+  }
+
+  .book-etc {
+    margin-top: 1rem;
+  }
+
+  .get-book-btn {
+    margin-top: 2rem;
+  }
+
+  .chosen-book {
+    top: 48%;
+  }
+
+  .re-upload-btn {
+    justify-content: flex-start !important;
+  }
+
+  .spacer {
+    content: "";
+    height: 50vh;
+  }
+}
