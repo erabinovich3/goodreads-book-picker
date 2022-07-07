@@ -5,9 +5,7 @@ function ChosenBook({ book }) {
   const [cover, setCover] = useState(book.cover);
 
   const getCoverImg = () => {
-    fetch(
-      `https://goodreads-book-picker.netlify.app/gr-book-cover/${book.grBookId}`
-    )
+    fetch(`https://www.goodreads.com/book/show/${book.grBookId}`)
       .then((res) => res.text())
       .then((html) => {
         const parser = new DOMParser();
