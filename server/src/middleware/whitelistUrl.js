@@ -1,5 +1,5 @@
 const checkWhitelist = (req, res, next) => {
-  const validDomains = ["https://goodreads-book-picker.netlify.app/"];
+  const validDomains = ["https://goodreads-book-picker.netlify.app"];
 
   if (validDomains.includes(req.get("origin"))) {
     next();
