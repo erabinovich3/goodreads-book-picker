@@ -3,27 +3,28 @@ import Loading from "./Loading";
 
 function ChosenBook({ book }) {
   const [cover, setCover] = useState(book.cover);
+  const defaultImg =
+    "https://images.unsplash.com/photo-1621944190310-e3cca1564bd7";
 
   const getCoverImg = () => {
-    fetch(`https://www.goodreads.com/book/show/${book.grBookId}`)
-      .then((res) => res.text())
-      .then((html) => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, "text/html");
+    fetch(`http://localhost:5000/api/v1/bookCovers/${book.grBookId}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("No cover found.");
+        }
 
-        const imgSrcElem =
-          doc.querySelector(`meta[name='twitter:image']`) ||
-          doc.querySelector(`meta[property='og:image']`);
-        const imgSrc = imgSrcElem
-          .getAttribute("content")
-          .replace(/\._.*_/gm, "");
+        return res.json();
+      })
+      .then((json) => {
+        const imgSrc = json.bookCover;
 
         book.cover = imgSrc;
         setCover(imgSrc);
       })
       .catch((err) => {
         console.error(err);
-        setCover(require("../images/fang-wei-lin-H1IRUS1vEFA-unsplash.jpg"));
+        book.cover = defaultImg;
+        setCover(defaultImg);
       });
   };
 
