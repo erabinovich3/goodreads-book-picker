@@ -7,7 +7,9 @@ function ChosenBook({ book }) {
     "https://images.unsplash.com/photo-1621944190310-e3cca1564bd7";
 
   const getCoverImg = () => {
-    fetch(`http://localhost:5000/api/v1/bookCovers/${book.grBookId}`)
+    fetch(
+      `https://goodreads-book-picker-server.herokuapp.com/api/v1/bookCovers/${book.grBookId}`
+    )
       .then((res) => {
         if (!res.ok) {
           throw new Error("No cover found.");
