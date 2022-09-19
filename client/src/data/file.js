@@ -47,14 +47,7 @@ export const isValidGRArray = (arr) => {
     arr[0].hasOwnProperty("spoiler") &&
     arr[0].hasOwnProperty("private-notes") &&
     arr[0].hasOwnProperty("read-count") &&
-    arr[0].hasOwnProperty("recommended-for") &&
-    arr[0].hasOwnProperty("recommended-by") &&
-    arr[0].hasOwnProperty("owned-copies") &&
-    arr[0].hasOwnProperty("original-purchase-date") &&
-    arr[0].hasOwnProperty("original-purchase-location") &&
-    arr[0].hasOwnProperty("condition") &&
-    arr[0].hasOwnProperty("condition-description") &&
-    arr[0].hasOwnProperty("bcid")
+    arr[0].hasOwnProperty("owned-copies")
   );
 };
 
